@@ -1,0 +1,12 @@
+
+# Padrão para todos os arquivos
+* text=auto eol=lf
+
+# Arquivos binários
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.gif binary
+*.ico binary
+*.pdf binary
+*.zip binary
