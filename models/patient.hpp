@@ -20,7 +20,28 @@ private:
 
 public:
     patient(); // construtor vazio;
-                // Item(const Item& copyItem); // construtor de copia
+    patient(int id, const string& nome, int idade, const string& queixa);         // Item(const Item& copyItem); // construtor de copia
+    ~patient();
+
+    int getId() const;
+    void setId();
+
+    string getNome()const;
+    void setNome();
+
+    int getIdade() const;
+    void setIdade();
+
+    string getQueixa() const;
+    void setQueixa();
+
+    int getPrioridade()const;
+    void setPrioridade();
+
+    int getChegada ()const;
+    void setChegada();
+
+
 };
 
 #endif
