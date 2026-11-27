@@ -6,8 +6,8 @@
 // Nó da fila histórico de pacientes atendidos
 struct NoQueuePatientCareHistory
 {
-    patient Patient;
-    NoQueuePatientCareHistory* nextHistoryPatient;
+    Patient Patient;
+    NoQueuePatientCareHistory *nextHistoryPatient;
 };
 
 #endif

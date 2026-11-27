@@ -4,44 +4,48 @@
 using namespace std;
 
 #include <string>
+#include "../enuns/enumStageOfPatientCare.h"
 
 // uma classe que representa um nó de produtos;
 // representa um nó de uma lista encadeada de produto
-class patient
+class Patient
 {
 
 private:
     int id; // Ponteiro para o produto cadastrado e exibido no menu
-    string nome;
-    int idade;
-    string queixa;
-    int prioridade;
-    int chegada;
+    string name;
+    int age;
+    string complaint;
+    int priority;
+    int arrival;
+    StageOfPatientCare stagePatient;
 
 public:
-    patient(); // construtor vazio;
-    patient(int id, const string& nome, int idade, const string& queixa);         // Item(const Item& copyItem); // construtor de copia
-    ~patient();
+    Patient();                                                                                                   // construtor vazio;
+    Patient(const string &name, int age, const string &complaint, int priority, int arrival, StageOfPatientCare statusPatient); // Item(const Item& copyItem); // construtor parametrizado
 
     int getId() const;
-    void setId();
+    void setId(int newId);
 
-    string getNome()const;
-    void setNome();
+    string getName() const;
+    void setName(string newName);
 
-    int getIdade() const;
-    void setIdade();
+    int getAge() const;
+    void setAge(int newAge);
 
-    string getQueixa() const;
-    void setQueixa();
+    string getComplaint() const;
+    void setComplaint(int newComplaint);
 
-    int getPrioridade()const;
-    void setPrioridade();
+    int getPriority() const;
+    void setPriority(int newPriority);
 
-    int getChegada ()const;
-    void setChegada();
+    int getArrival() const;
+    void setArrival(int newArrival);
 
+    StageOfPatientCare getStatusPatient();
+    void setStatusPatient(StageOfPatientCare newStatusPatient);
 
+    ~Patient();
 };
 
 #endif

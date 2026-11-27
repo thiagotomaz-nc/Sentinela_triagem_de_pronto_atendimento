@@ -1,32 +1,45 @@
-#ifndef _Shifts_HPP_
-#define _Shifts_HPP_
+#ifndef _SHIFTS_HPP_
+#define _SHIFTS_HPP_
 
 #include <string>
+using namespace std;
+#include <iostream>
+#include <ctime>
+
 #include "MedicalCare.hpp"
 
-class Shifts {
-    private:
-        //Date shiftDate;
-        int StartTimeOfShift;
-        int EndTimeOfShift;
-        int shiftReport;
-        MedicalCare HospitalCare;
-    public:
-        void avancarRelogio(int minutos);
+class Shift
+{
+private:
+    time_t shiftDate;
+    string shiftName;
+    int shiftClock;
+    int shiftStartTime;
+    int shiftEndTime;
+    bool shiftStatus;
+    int shiftReport;
+    MedicalCare HospitalCare;
+public:
+    Shift();
+    Shift(int shiftStartTime, int shiftEndTime);
 
-        //Date getDataPlantao();
+    void AdvanceClock(int minutes);
+    int getShiftClock();
 
-        int getHoraInicioPlantao();
-        void setHoraInicioPlantao(int novaHoraInicio);
+    string getShiftDateBR();
 
-        int getHoraFimPlantao();
-        void setHorafimPlanato(int novaHoraFim);
+    int getShiftStartTime();
+    void setShiftStartTime(int novaHoraInicio);
 
-        void gerarRelatorio();
-        void iniciarPlantao();
-        void fecharPlantao();
+    int getShiftEndTime();
+    void setShiftEndTime(int novaHoraFim);
 
-        bool getInicioPlantao();  
+    void generateReport();
+    void shiftToStart();
+    void shiftClose();
+
+    bool getShiftStatus();
+    void shiftShowResume();
 };
 
 #endif

@@ -4,18 +4,22 @@
 #include <string>
 #include <list>
 #include "patient.hpp"
+#include <iostream>
 
-class MedicalCare{
-    private:
-        list<patient*>listaDeAtendimento;
+using namespace std;
 
-    public:
-        MedicalCare();
-        ~MedicalCare();
+class MedicalCare
+{
+private:
+    list<Patient *> listOfPatientsEncounters;
 
-        patient chamarProximoPaciente();
-        bool concluirAtendimento(const string& prontuario);
+public:
+    MedicalCare();
+
+    void callTheNextPatient();
+    bool concludeHospitalEncounter(string medicalReport);
+
+    ~MedicalCare();
 };
-
 
 #endif

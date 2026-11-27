@@ -1,6 +1,7 @@
+#include "models/EmergencyCareUnit.hpp"
+#include "models/Shifts.hpp"
+#include "models/MedicalCare.hpp"
 #include "models/patient.hpp"
-
-#include "enuns/enumPriorityColorTime.h"
 
 #include <iostream>
 #include <vector>
@@ -20,6 +21,8 @@ int main()
 {
     bool repeat = true;
     int response = 0;
+    EmergencyCareUnit healthUnit;
+    Shift shift;
 
     cout
         << endl;
@@ -27,19 +30,21 @@ int main()
     // criar um order, através dos produtos, podendo inclusive cadastrar novos produtos, editar, excluir (desativas), consultar
     do
     {
-        cout << "\nNew Cross Burguer - HOME" << endl;
+        cout << "\n Menu de triagem da " << healthUnit.getNameEmergencyCareUnit() << endl;
         cout << "**********************************************************" << endl;
-        cout << "1 - Registrar Chegada" << endl;
-        cout << "2 - Chamar proximo paciente" << endl;
-        cout << "3 - Consultar proximo" << endl;
-        cout << "4 - Historico" << endl;
-        cout << "5 - Reclassificar paciente" << endl;
-        cout << "6 - Registrar Desistencia" << endl;
-        cout << "7 - Listar fila de espera" << endl;
-        cout << "8 - Avançar relogio" << endl;
-        cout << "9 - Desfazer ultima acao" << endl;
-        cout << "10 - Relatorio do plantao" << endl;
-        cout << "11 - Sair do sistema" << endl;
+        cout << "1 - Iniciar Plantao" << endl;
+        cout << "2 - Finalizar Plantao" << endl;
+        cout << "3 - Registrar Chegada" << endl;
+        cout << "4 - Chamar proximo paciente" << endl;
+        cout << "5 - Consultar proximo" << endl;
+        cout << "6 - Historico" << endl;
+        cout << "7 - Reclassificar paciente" << endl;
+        cout << "8 - Registrar Desistencia" << endl;
+        cout << "9 - Listar fila de espera" << endl;
+        cout << "10 - Avançar relogio" << endl;
+        cout << "11 - Desfazer ultima acao" << endl;
+        cout << "12 - Relatorio do plantao" << endl;
+        cout << "13 - Sair do sistema" << endl;
         cout << "----------------------------------------------" << endl;
         cout << "\nDigite a opcao desejada: ";
         cin >> response;
@@ -69,10 +74,11 @@ int main()
         case 10:
             break;
         case 11:
+            break;
+        case 12:
+            break;
+        case 13:
             /* code */
-            cout << endl;
-            cout << "Saindo do sistema!!!\nAte mais!!" << endl;
-            cout << endl;
             repeat = false;
             break;
 
@@ -154,17 +160,6 @@ void menuDividers()
 
 void deleteTerminal()
 {
-
-    /*
-    char continueClear;
-    cout << "\nPressione a tecla [s] para Limpar o terminal ou qualquer outra para continuar..." << endl;
-    cin >> continueClear;
-
-    if (continueClear == 's' || continueClear == 'S')
-    {
-        system("clear");
-    }*/
-
     system("cls");
 }
 
